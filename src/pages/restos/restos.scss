@@ -1,0 +1,27 @@
+ion-header{
+    box-shadow: none !important;
+    border: none;
+}
+
+.header-ios .toolbar-ios:last-child .toolbar-background-ios{
+    border: none !important;
+}
+ion-card{
+    .card-image{
+        position: relative;
+        height: 150px;
+        overflow: hidden;
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    box-shadow: none !important;
+    border-radius: 5px !important;
+    ion-card-title{
+        font-size: 1em !important;
+        font-weight: bolder;
+    }
+}
