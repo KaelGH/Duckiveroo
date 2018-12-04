@@ -1,27 +1,79 @@
-ion-header{
-    box-shadow: none !important;
-    border: none;
+ion-spinner * {
+  width: 28px;
+  height: 28px;
+  stroke: #444;
+  fill: red;
 }
 
-.header-ios .toolbar-ios:last-child .toolbar-background-ios{
-    border: none !important;
-}
-ion-card{
-    .card-image{
-        position: relative;
-        height: 150px;
-        overflow: hidden;
-        img{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+ion-header {
+  box-shadow: none !important;
+  border: none;
+  .restos-navbar {
+    padding: 10px 18px !important;
+    .toolbar-content {
+      background: darken(#20b2af, 10%);
+      border-radius: 4px;
+      .butn-search {
+        background: none;
+        box-shadow: none;
+        text-align: left;
+        text-transform: none;
+        width: 82%;
+        margin: 0;
+        span {
+          display: inline;
+          ion-icon {
+            margin-right: 15px;
+          }
         }
+      }
+      .butn-time {
+        background: none;
+        box-shadow: none;
+        border-radius: 4px;
+        text-align: left;
+        text-transform: none;
+        float: right;
+        margin: 0;
+      }
     }
-    box-shadow: none !important;
-    border-radius: 5px !important;
-    ion-card-title{
-        font-size: 1em !important;
-        font-weight: bolder;
+  }
+}
+
+.header-ios .toolbar-ios:last-child .toolbar-background-ios {
+  border: none !important;
+}
+
+.scroll-content {
+  padding: 8px;
+}
+
+ion-card {
+  box-shadow: none !important;
+  border-radius: 4px !important;
+  .card-image {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
+  }
+  span {
+    font-weight: bold;
+    margin-right: 4px;
+  }
+  ion-card-title {
+    font-size: 1em !important;
+    font-weight: bolder;
+  }
+}
+
+.action-sheet-container {
+  button {
+    margin: 15px 0;
+  }
 }

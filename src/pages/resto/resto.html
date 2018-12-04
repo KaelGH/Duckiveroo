@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="primary"> {{ resto.name }} </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="card-image"><img src="{{resto.image}}" /></div>
+  <div class="resto-content">
+    <p class="resto-name">{{ resto.name }}</p>
+    <div class="resto-infos">
+      <p>
+        <ion-icon name="happy" color="primary"> </ion-icon>
+        <span>{{ resto.likes }}%</span>
+      </p>
+      <p margin-bottom>
+        {{ resto.prixLivraison }} € de livraison - {{ resto.minOrder }} €
+        minimum
+      </p>
+      <p>{{ resto.description }}</p>
+    </div>
+  </div>
+</ion-content>

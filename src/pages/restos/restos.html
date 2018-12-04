@@ -1,71 +1,37 @@
 <ion-header>
-
-  <ion-navbar color="primary">
-    
+  <ion-navbar color="primary" class="restos-navbar">
+    <button ion-button large class="butn-search" (click)="openLocation()">
+      <ion-icon name="pin"></ion-icon>
+      Lieu sélectionné
+    </button>
+    <button ion-button large class="butn-time" (click)="openTimer()">
+      <ion-icon name="time"></ion-icon>
+    </button>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="none" refreshingSpinner="crescent">
+    </ion-refresher-content>
+  </ion-refresher>
 
-<ion-content padding>
-    <ion-card>
-      <div class="card-image">
-          <img src="https://s2.croquonslavie.fr/cdn/farfuture/A7UR0egokdHHPox57yMYzTA7wBYMNnpLV1SFOA_-v48/mtime:1538013694/sites/default/files/styles/mega_fiche/public/images/recipe/field_recipe_single_carousel_img/recette-burger-raclette_721874.jpg?itok=7ENTPS5a"/>
-       
-      </div>
-        <ion-card-content no-padding>
-          <ion-card-title>
-            Burger Mystery Machine
-            </ion-card-title>
-          <p margin-bottom>
-            C'est bon bordel
-          </p>
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card margin-top>
-          <div class="card-image">
-              <img src="https://s2.croquonslavie.fr/cdn/farfuture/A7UR0egokdHHPox57yMYzTA7wBYMNnpLV1SFOA_-v48/mtime:1538013694/sites/default/files/styles/mega_fiche/public/images/recipe/field_recipe_single_carousel_img/recette-burger-raclette_721874.jpg?itok=7ENTPS5a"/>
-           
-          </div>
-            <ion-card-content no-padding>
-              <ion-card-title>
-                Burger Mystery Machine
-                </ion-card-title>
-              <p>
-                C'est bon bordel
-              </p>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card margin-top>
-              <div class="card-image">
-                  <img src="https://s2.croquonslavie.fr/cdn/farfuture/A7UR0egokdHHPox57yMYzTA7wBYMNnpLV1SFOA_-v48/mtime:1538013694/sites/default/files/styles/mega_fiche/public/images/recipe/field_recipe_single_carousel_img/recette-burger-raclette_721874.jpg?itok=7ENTPS5a"/>
-               
-              </div>
-                <ion-card-content no-padding>
-                  <ion-card-title>
-                    Burger Mystery Machine
-                    </ion-card-title>
-                  <p>
-                    C'est bon bordel
-                  </p>
-                </ion-card-content>
-              </ion-card>
-              
-              <ion-card margin-top>
-                  <div class="card-image">
-                      <img src="https://s2.croquonslavie.fr/cdn/farfuture/A7UR0egokdHHPox57yMYzTA7wBYMNnpLV1SFOA_-v48/mtime:1538013694/sites/default/files/styles/mega_fiche/public/images/recipe/field_recipe_single_carousel_img/recette-burger-raclette_721874.jpg?itok=7ENTPS5a"/>
-                   
-                  </div>
-                    <ion-card-content no-padding>
-                      <ion-card-title>
-                        Burger Mystery Machine
-                        </ion-card-title>
-                      <p>
-                        C'est bon bordel
-                      </p>
-                    </ion-card-content>
-                  </ion-card>
-
+  <ion-card
+    *ngFor="let resto of restaurants"
+    margin-top
+    (click)="goToRestoPage(resto)"
+  >
+    <div class="card-image"><img src="{{resto.image}}" /></div>
+    <ion-card-content no-padding>
+      <ion-card-title> {{ resto.name }} </ion-card-title>
+      <p>
+        <ion-icon name="happy" color="primary"> </ion-icon>
+        <span>{{ resto.likes }}%</span> {{ resto.description }}
+      </p>
+      <p margin-bottom>
+        {{ resto.prixLivraison }} € de livraison - {{ resto.minOrder }} €
+        minimum
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -1,3 +1,17 @@
 page-recherche {
-
+  ion-header {
+    box-shadow: none !important;
+    border: none;
+    .search-navbar {
+      padding: 10px 18px !important;
+      .toolbar-content {
+        .list {
+          margin: 0;
+          .item {
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
 }
