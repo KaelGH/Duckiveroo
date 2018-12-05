@@ -6,13 +6,15 @@ import { StatusBar } from '@ionic-native/status-bar'
 import { HttpClientModule } from '@angular/common/http'
 
 //PAGES
-import { ComptePage } from './../pages/compte/compte'
-import { RecherchePage } from './../pages/recherche/recherche'
-import { RestosPage } from './../pages/restos/restos'
+import { ComptePage } from '../pages/compte/compte'
+import { RecherchePage } from '../pages/recherche/recherche'
+import { RestosPage } from '../pages/restos/restos'
 import { MyApp } from './app.component'
-import { HomePage } from './../pages/home/home'
+import { HomePage } from '../pages/home/home'
 import { RestProvider } from '../providers/rest/rest'
 import { RestoPage } from '../pages/resto/resto'
+import { LoginPage } from '../pages/login/login'
+import { RegisterPage } from '../pages/register/register'
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { RestoPage } from '../pages/resto/resto'
     RestosPage,
     RecherchePage,
     ComptePage,
-    RestoPage
+    RestoPage,
+    LoginPage,
+    RegisterPage,
   ],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
@@ -31,7 +35,9 @@ import { RestoPage } from '../pages/resto/resto'
     RestosPage,
     RecherchePage,
     ComptePage,
-    RestoPage
+    RestoPage,
+    LoginPage,
+    RegisterPage,
   ],
   providers: [
     StatusBar,

@@ -30,7 +30,6 @@ export class RestosPage {
   getRestos() {
     this.restProvider.getRestos().then(data => {
       this.restaurants = data
-      console.log('resto.ts :', this.restaurants)
     })
   }
 
