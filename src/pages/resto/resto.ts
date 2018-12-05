@@ -17,11 +17,19 @@ import { RestProvider } from '../../providers/rest/rest'
 export class RestoPage {
   id: any
   resto: any
+  categories: any
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public restProvider: RestProvider
   ) {
     this.resto = navParams.get('resto')
+    this.getCategories()
+  }
+  getCategories() {
+    this.restProvider.getCategories().then(data => {
+      this.categories = data
+    })
   }
 }

@@ -1,11 +1,11 @@
 <ion-header>
   <ion-navbar color="primary" class="restos-navbar">
     <button ion-button large class="butn-search" (click)="openLocation()">
-      <ion-icon name="pin"></ion-icon>
+      <ion-icon ios="md-pin" md="md-pin"></ion-icon>
       Lieu sélectionné
     </button>
     <button ion-button large class="butn-time" (click)="openTimer()">
-      <ion-icon name="time"></ion-icon>
+      <ion-icon ios="md-time" md="md-time"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
@@ -24,14 +24,19 @@
     <div class="card-image"><img src="{{resto.image}}" /></div>
     <ion-card-content no-padding>
       <ion-card-title> {{ resto.name }} </ion-card-title>
-      <p>
-        <ion-icon name="happy" color="primary"> </ion-icon>
-        <span>{{ resto.likes }}%</span> {{ resto.description }}
-      </p>
-      <p margin-bottom>
-        {{ resto.prixLivraison }} € de livraison - {{ resto.minOrder }} €
-        minimum
-      </p>
+      <div class="resto-infos" margin-bottom>
+        <ion-icon ios="md-happy" md="md-happy" color="primary"> </ion-icon>
+        <span class="likes">{{ resto.likes }}%</span> •
+        <span class="rating">
+          <span *ngIf="resto.generalcost > 0">€</span>
+          <span *ngIf="resto.generalcost > 1">€</span>
+          <span *ngIf="resto.generalcost > 2">€</span> </span
+        >&nbsp;• {{ resto.type }}
+        <p>
+          {{ resto.prixLivraison }} € de livraison • {{ resto.minOrder }} €
+          minimum
+        </p>
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>

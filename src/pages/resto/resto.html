@@ -7,15 +7,36 @@
   <div class="resto-content">
     <p class="resto-name">{{ resto.name }}</p>
     <div class="resto-infos">
-      <p>
-        <ion-icon name="happy" color="primary"> </ion-icon>
-        <span>{{ resto.likes }}%</span>
-      </p>
+      <div>
+        <ion-icon ios="md-happy" md="md-happy" color="primary"> </ion-icon>
+        <span class="likes">{{ resto.likes }}%</span> •
+        <span class="rating">
+          <span *ngIf="resto.generalcost > 0">€</span>
+          <span *ngIf="resto.generalcost > 1">€</span>
+          <span *ngIf="resto.generalcost > 2">€</span> </span
+        >&nbsp;• {{ resto.type }}
+      </div>
       <p margin-bottom>
-        {{ resto.prixLivraison }} € de livraison - {{ resto.minOrder }} €
+        {{ resto.prixLivraison }} € de livraison • {{ resto.minOrder }} €
         minimum
       </p>
       <p>{{ resto.description }}</p>
+    </div>
+  </div>
+  <div class="allergie">
+    <ion-icon ios="md-pizza" md="md-pizza"> </ion-icon>
+    <p>Ce restaurant prend en compte vos allergies alimentaires.</p>
+  </div>
+  <div class="menu-content">
+    <div class="categorie" *ngFor="let categorie of resto.categories">
+      <h3>{{ categorie.name }}</h3>
+      <div class="produits" *ngFor="let produit of categorie.produits">
+        <p class="produit-nom">
+          {{ produit.name }}
+          <span class="produit-prix">{{ produit.price }} €</span>
+        </p>
+        <p class="produit-description">{{ produit.description }}</p>
+      </div>
     </div>
   </div>
 </ion-content>

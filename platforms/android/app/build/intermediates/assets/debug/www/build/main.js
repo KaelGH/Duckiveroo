@@ -1,12 +1,13 @@
-webpackJsonp([4],{
+webpackJsonp([5],{
 
 /***/ 101:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComptePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_propos_app_propos__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -16,6 +17,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 /**
@@ -28,15 +30,16 @@ var ComptePage = /** @class */ (function () {
     function ComptePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.aPropos = __WEBPACK_IMPORTED_MODULE_0__app_propos_app_propos__["a" /* AppProposPage */];
     }
     ComptePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ComptePage');
     };
     ComptePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-compte',template:/*ion-inline-start:"C:\dev\appli\Duckiveroo\src\pages\compte\compte.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>compte</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>'/*ion-inline-end:"C:\dev\appli\Duckiveroo\src\pages\compte\compte.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
+            selector: 'page-compte',template:/*ion-inline-start:"C:\dev\appli\Duckiveroo\src\pages\compte\compte.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Compte</ion-title>\n    <span>email@email.email</span>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="user-infos">\n    <ion-list no-lines>\n      <ion-item>\n        <ion-icon ios="md-person" md="md-person" item-start></ion-icon>\n        Mes informations\n      </ion-item>\n      <ion-item>\n        <ion-icon ios="md-pin" md="md-pin" item-start></ion-icon>\n        Adresse de livraison\n      </ion-item>\n    </ion-list>\n  </div>\n  <div class="appli-infos">\n    <ion-list no-lines>\n      <ion-item (click)="(aPropos)"> A propos de </ion-item>\n      <ion-item> Déconnexion </ion-item>\n    </ion-list>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\dev\appli\Duckiveroo\src\pages\compte\compte.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */]])
     ], ComptePage);
     return ComptePage;
 }());
@@ -51,7 +54,7 @@ var ComptePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecherchePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resto_resto__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -115,7 +118,7 @@ var RecherchePage = /** @class */ (function () {
     };
     RecherchePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-recherche',template:/*ion-inline-start:"C:\dev\appli\Duckiveroo\src\pages\recherche\recherche.html"*/'<ion-header>\n  <ion-navbar color="primary" class="search-navbar">\n    <ion-list>\n      <ion-item>\n        <ion-input\n          (input)="getItems($event)"\n          type="text"\n          placeholder="Chercher restaurants et types de cuisine"\n        ></ion-input>\n      </ion-item>\n    </ion-list>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n    <ion-item\n      *ngFor="let resto of queryRestaurants"\n      (click)="goToRestoPage(resto)"\n    >\n      {{ resto.name }}\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\dev\appli\Duckiveroo\src\pages\recherche\recherche.html"*/
+            selector: 'page-recherche',template:/*ion-inline-start:"C:\dev\appli\Duckiveroo\src\pages\recherche\recherche.html"*/'<ion-header>\n  <ion-navbar color="primary" class="search-navbar">\n    <ion-list>\n      <ion-item>\n        <ion-input\n          (input)="getItems($event)"\n          type="text"\n          placeholder="Chercher restaurants et types de cuisine"\n        ></ion-input>\n      </ion-item>\n    </ion-list>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h3>Restaurants</h3>\n  <ion-list no-lines>\n    <ion-item\n      *ngFor="let resto of queryRestaurants"\n      (click)="goToRestoPage(resto)"\n    >\n      <ion-avatar item-start> <img src="{{ resto.image }}" /> </ion-avatar>\n      {{ resto.name }}\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\dev\appli\Duckiveroo\src\pages\recherche\recherche.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
@@ -134,7 +137,7 @@ var RecherchePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestosPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resto_resto__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -226,7 +229,7 @@ var RestosPage = /** @class */ (function () {
     };
     RestosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-restos',template:/*ion-inline-start:"C:\dev\appli\Duckiveroo\src\pages\restos\restos.html"*/'<ion-header>\n  <ion-navbar color="primary" class="restos-navbar">\n    <button ion-button large class="butn-search" (click)="openLocation()">\n      <ion-icon name="pin"></ion-icon>\n      Lieu sélectionné\n    </button>\n    <button ion-button large class="butn-time" (click)="openTimer()">\n      <ion-icon name="time"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content pullingIcon="none" refreshingSpinner="crescent">\n    </ion-refresher-content>\n  </ion-refresher>\n\n  <ion-card\n    *ngFor="let resto of restaurants"\n    margin-top\n    (click)="goToRestoPage(resto)"\n  >\n    <div class="card-image"><img src="{{resto.image}}" /></div>\n    <ion-card-content no-padding>\n      <ion-card-title> {{ resto.name }} </ion-card-title>\n      <p>\n        <ion-icon name="happy" color="primary"> </ion-icon>\n        <span>{{ resto.likes }}%</span> {{ resto.description }}\n      </p>\n      <p margin-bottom>\n        {{ resto.prixLivraison }} € de livraison - {{ resto.minOrder }} €\n        minimum\n      </p>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\dev\appli\Duckiveroo\src\pages\restos\restos.html"*/
+            selector: 'page-restos',template:/*ion-inline-start:"C:\dev\appli\Duckiveroo\src\pages\restos\restos.html"*/'<ion-header>\n  <ion-navbar color="primary" class="restos-navbar">\n    <button ion-button large class="butn-search" (click)="openLocation()">\n      <ion-icon ios="md-pin" md="md-pin"></ion-icon>\n      Lieu sélectionné\n    </button>\n    <button ion-button large class="butn-time" (click)="openTimer()">\n      <ion-icon ios="md-time" md="md-time"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content pullingIcon="none" refreshingSpinner="crescent">\n    </ion-refresher-content>\n  </ion-refresher>\n\n  <ion-card\n    *ngFor="let resto of restaurants"\n    margin-top\n    (click)="goToRestoPage(resto)"\n  >\n    <div class="card-image"><img src="{{resto.image}}" /></div>\n    <ion-card-content no-padding>\n      <ion-card-title> {{ resto.name }} </ion-card-title>\n      <div class="resto-infos" margin-bottom>\n        <ion-icon ios="md-happy" md="md-happy" color="primary"> </ion-icon>\n        <span class="likes">{{ resto.likes }}%</span> •\n        <span class="rating">\n          <span *ngIf="resto.generalcost > 0">€</span>\n          <span *ngIf="resto.generalcost > 1">€</span>\n          <span *ngIf="resto.generalcost > 2">€</span> </span\n        >&nbsp;• {{ resto.type }}\n        <p>\n          {{ resto.prixLivraison }} € de livraison • {{ resto.minOrder }} €\n          minimum\n        </p>\n      </div>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\dev\appli\Duckiveroo\src\pages\restos\restos.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
@@ -262,20 +265,24 @@ webpackEmptyAsyncContext.id = 115;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"../pages/app-propos/app-propos.module": [
+		280,
+		4
+	],
 	"../pages/compte/compte.module": [
-		279,
+		281,
 		3
 	],
 	"../pages/recherche/recherche.module": [
-		280,
+		282,
 		2
 	],
 	"../pages/resto/resto.module": [
-		281,
+		283,
 		1
 	],
 	"../pages/restos/restos.module": [
-		282,
+		284,
 		0
 	]
 };
@@ -325,7 +332,7 @@ var HomePage = /** @class */ (function () {
     }
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\dev\appli\Duckiveroo\src\pages\home\home.html"*/'<ion-tabs>\n  <ion-tab tabIcon="home" tabTitle="Restaurants" [root]="tab1"></ion-tab>\n  <ion-tab tabIcon="search" tabTitle="Recherche" [root]="tab2"></ion-tab>\n  <ion-tab tabIcon="person" tabTitle="Compte" [root]="tab3"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"C:\dev\appli\Duckiveroo\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\dev\appli\Duckiveroo\src\pages\home\home.html"*/'<ion-tabs>\n  <ion-tab tabIcon="md-home" tabTitle="Restaurants" [root]="tab1"></ion-tab>\n  <ion-tab tabIcon="md-search" tabTitle="Recherche" [root]="tab2"></ion-tab>\n  <ion-tab tabIcon="md-person" tabTitle="Compte" [root]="tab3"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"C:\dev\appli\Duckiveroo\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], HomePage);
@@ -340,9 +347,54 @@ var HomePage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppProposPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the AppProposPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AppProposPage = /** @class */ (function () {
+    function AppProposPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    AppProposPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AppProposPage');
+    };
+    AppProposPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-app-propos',template:/*ion-inline-start:"C:\dev\appli\Duckiveroo\src\pages\app-propos\app-propos.html"*/'<!--\n  Generated template for the AppProposPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>appPropos</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\dev\appli\Duckiveroo\src\pages\app-propos\app-propos.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], AppProposPage);
+    return AppProposPage;
+}());
+
+//# sourceMappingURL=app-propos.js.map
+
+/***/ }),
+
+/***/ 204:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(225);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -350,21 +402,21 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 224:
+/***/ 225:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_compte_compte__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_recherche_recherche__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_restos_restos__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__(279);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_rest_rest__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_resto_resto__ = __webpack_require__(51);
@@ -403,6 +455,7 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {}, {
                     links: [
+                        { loadChildren: '../pages/app-propos/app-propos.module#AppProposPageModule', name: 'AppProposPage', segment: 'app-propos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/compte/compte.module#ComptePageModule', name: 'ComptePage', segment: 'compte', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recherche/recherche.module#RecherchePageModule', name: 'RecherchePage', segment: 'recherche', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/resto/resto.module#RestoPageModule', name: 'RestoPage', segment: 'resto', priority: 'low', defaultHistory: [] },
@@ -433,13 +486,13 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 278:
+/***/ 279:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(202);
@@ -542,6 +595,23 @@ var RestProvider = /** @class */ (function () {
             });
         });
     };
+    RestProvider.prototype.getCategories = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.http
+                .get(_this.apiUrl + '/categories', {
+                params: {
+                    token: 'test'
+                }
+            })
+                .subscribe(function (data) {
+                resolve(data);
+                return data;
+            }, function (err) {
+                console.log(err);
+            });
+        });
+    };
     RestProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
@@ -559,7 +629,7 @@ var RestProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -585,10 +655,17 @@ var RestoPage = /** @class */ (function () {
         this.navParams = navParams;
         this.restProvider = restProvider;
         this.resto = navParams.get('resto');
+        this.getCategories();
     }
+    RestoPage.prototype.getCategories = function () {
+        var _this = this;
+        this.restProvider.getCategories().then(function (data) {
+            _this.categories = data;
+        });
+    };
     RestoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-resto',template:/*ion-inline-start:"C:\dev\appli\Duckiveroo\src\pages\resto\resto.html"*/'<ion-header>\n  <ion-navbar color="primary"> {{ resto.name }} </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <div class="card-image"><img src="{{resto.image}}" /></div>\n  <div class="resto-content">\n    <p class="resto-name">{{ resto.name }}</p>\n    <div class="resto-infos">\n      <p>\n        <ion-icon name="happy" color="primary"> </ion-icon>\n        <span>{{ resto.likes }}%</span>\n      </p>\n      <p margin-bottom>\n        {{ resto.prixLivraison }} € de livraison - {{ resto.minOrder }} €\n        minimum\n      </p>\n      <p>{{ resto.description }}</p>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\dev\appli\Duckiveroo\src\pages\resto\resto.html"*/
+            selector: 'page-resto',template:/*ion-inline-start:"C:\dev\appli\Duckiveroo\src\pages\resto\resto.html"*/'<ion-header>\n  <ion-navbar color="primary"> {{ resto.name }} </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <div class="card-image"><img src="{{resto.image}}" /></div>\n  <div class="resto-content">\n    <p class="resto-name">{{ resto.name }}</p>\n    <div class="resto-infos">\n      <div>\n        <ion-icon ios="md-happy" md="md-happy" color="primary"> </ion-icon>\n        <span class="likes">{{ resto.likes }}%</span> •\n        <span class="rating">\n          <span *ngIf="resto.generalcost > 0">€</span>\n          <span *ngIf="resto.generalcost > 1">€</span>\n          <span *ngIf="resto.generalcost > 2">€</span> </span\n        >&nbsp;• {{ resto.type }}\n      </div>\n      <p margin-bottom>\n        {{ resto.prixLivraison }} € de livraison • {{ resto.minOrder }} €\n        minimum\n      </p>\n      <p>{{ resto.description }}</p>\n    </div>\n  </div>\n  <div class="allergie">\n    <ion-icon ios="md-pizza" md="md-pizza"> </ion-icon>\n    <p>Ce restaurant prend en compte vos allergies alimentaires.</p>\n  </div>\n  <div class="menu-content">\n    <div class="categorie" *ngFor="let categorie of resto.categories">\n      <h3>{{ categorie.name }}</h3>\n      <div class="produits" *ngFor="let produit of categorie.produits">\n        <p class="produit-nom">\n          {{ produit.name }}\n          <span class="produit-prix">{{ produit.price }} €</span>\n        </p>\n        <p class="produit-description">{{ produit.description }}</p>\n      </div>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\dev\appli\Duckiveroo\src\pages\resto\resto.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
@@ -601,5 +678,5 @@ var RestoPage = /** @class */ (function () {
 
 /***/ })
 
-},[203]);
+},[204]);
 //# sourceMappingURL=main.js.map

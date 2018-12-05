@@ -52,4 +52,25 @@ export class RestProvider {
         )
     })
   }
+
+  getCategories() {
+    return new Promise(resolve => {
+      this.http
+        .get(this.apiUrl + '/categories', {
+          params: {
+            token: 'test'
+          }
+        })
+        .subscribe(
+          data => {
+            resolve(data)
+            return data
+          },
+          err => {
+            console.log(err)
+          }
+        )
+    })
+  }
+
 }

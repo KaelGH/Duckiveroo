@@ -62,13 +62,22 @@ ion-card {
       transform: translate(-50%, -50%);
     }
   }
-  span {
-    font-weight: bold;
-    margin-right: 4px;
-  }
   ion-card-title {
-    font-size: 1em !important;
+    font-size: 1.2em !important;
     font-weight: bolder;
+  }
+  .resto-infos {
+    margin-top: -8px;
+    color: #999;
+    .likes {
+      color: #20b2af;
+    }
+    .rating span {
+      letter-spacing: -3px;
+    }
+    p {
+      color: #999;
+    }
   }
 }
 
