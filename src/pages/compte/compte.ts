@@ -1,6 +1,8 @@
 import { AppProposPage } from './../app-propos/app-propos'
 import { Component } from '@angular/core'
 import { IonicPage, NavController, NavParams } from 'ionic-angular'
+import { LoginPage } from '../login/login'
+import { RestoPage } from "../resto/resto"
 
 /**
  * Generated class for the ComptePage page.
@@ -20,7 +22,11 @@ export class ComptePage {
     this.aPropos = AppProposPage
   }
 
-  ionViewDidLoad() {
+  /*ionViewDidLoad() {
     console.log('ionViewDidLoad ComptePage')
+  }*/
+
+  goToLoginPage() {
+    this.navCtrl.push(LoginPage)
   }
 }
