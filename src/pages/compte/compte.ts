@@ -1,7 +1,10 @@
-import { Component } from '@angular/core'
-import { IonicPage, NavController, NavParams } from 'ionic-angular'
-import { LoginPage } from '../login/login'
-import { AppProposPage } from './../app-propos/app-propos'
+import {Component} from '@angular/core'
+import {IonicPage, NavController, NavParams} from 'ionic-angular'
+import {LoginPage} from '../login/login'
+import {AppProposPage} from './../app-propos/app-propos'
+
+import {RestProvider} from "../../providers/rest/rest";
+import {TokenProvider} from "../../providers/token/token";
 
 /**
  * Generated class for the ComptePage page.
@@ -12,20 +15,39 @@ import { AppProposPage } from './../app-propos/app-propos'
 
 @IonicPage()
 @Component({
-  selector: 'page-compte',
-  templateUrl: 'compte.html'
+    selector: 'page-compte',
+    templateUrl: 'compte.html'
 })
 export class ComptePage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+    user: any
 
-  /*ionViewDidLoad() {
-    console.log('ionViewDidLoad ComptePage')
-  }*/
+    constructor(
+        public navCtrl: NavController,
+        public navParams: NavParams,
+        public restProvider: RestProvider,
+        public tokenProvider: TokenProvider
+    ) {
+        this.canAccess()
+        this.getUser()
+    }
 
-  goToLoginPage() {
-    this.navCtrl.push(LoginPage)
-  }
-  goToProposPage() {
-    this.navCtrl.push(AppProposPage)
-  }
+    canAccess() {
+        if (!this.tokenProvider.isLoggedIn()) {
+            this.goToLoginPage()
+        }
+    }
+
+    getUser() {
+        this.restProvider.getUser().then(data => {
+            this.user = data
+        })
+    }
+
+    goToLoginPage() {
+        this.navCtrl.push(LoginPage)
+    }
+
+    goToProposPage() {
+        this.navCtrl.push(AppProposPage)
+    }
 }
