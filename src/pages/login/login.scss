@@ -1,3 +1,14 @@
 page-login {
-
+  ion-content {
+    button {
+      display: block;
+      padding: 12px;
+      width: 100%;
+      background: #20b2af;
+      color: white;
+      border-radius: 3px;
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+  }
 }

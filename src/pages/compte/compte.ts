@@ -1,8 +1,7 @@
-import { AppProposPage } from './../app-propos/app-propos'
 import { Component } from '@angular/core'
 import { IonicPage, NavController, NavParams } from 'ionic-angular'
 import { LoginPage } from '../login/login'
-import { RestoPage } from "../resto/resto"
+import { AppProposPage } from './../app-propos/app-propos'
 
 /**
  * Generated class for the ComptePage page.
@@ -17,10 +16,7 @@ import { RestoPage } from "../resto/resto"
   templateUrl: 'compte.html'
 })
 export class ComptePage {
-  aPropos: any
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.aPropos = AppProposPage
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   /*ionViewDidLoad() {
     console.log('ionViewDidLoad ComptePage')
@@ -28,5 +24,8 @@ export class ComptePage {
 
   goToLoginPage() {
     this.navCtrl.push(LoginPage)
+  }
+  goToProposPage() {
+    this.navCtrl.push(AppProposPage)
   }
 }

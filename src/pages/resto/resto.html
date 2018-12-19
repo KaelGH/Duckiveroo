@@ -30,7 +30,11 @@
   <div class="menu-content">
     <div class="categorie" *ngFor="let categorie of resto.categories">
       <h3>{{ categorie.name }}</h3>
-      <div class="produits" *ngFor="let produit of categorie.produits">
+      <div
+        (click)="addCart(produit.id)"
+        class="produits"
+        *ngFor="let produit of categorie.produits"
+      >
         <p class="produit-nom">
           {{ produit.name }}
           <span class="produit-prix">{{ produit.price }} €</span>

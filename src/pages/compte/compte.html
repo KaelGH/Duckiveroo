@@ -7,7 +7,6 @@
 
 <ion-content padding>
   <div class="user-infos">
-    <button ion-button (click)="goToLoginPage()">Connexion</button>
     <ion-list no-lines>
       <ion-item>
         <ion-icon ios="md-person" md="md-person" item-start></ion-icon>
@@ -21,8 +20,8 @@
   </div>
   <div class="appli-infos">
     <ion-list no-lines>
-      <ion-item (click)="(aPropos)"> A propos de </ion-item>
-      <ion-item> Déconnexion </ion-item>
+      <ion-item (click)="goToProposPage()"> A propos de </ion-item>
+      <ion-item (click)="goToLoginPage()"> Déconnexion </ion-item>
     </ion-list>
   </div>
 </ion-content>

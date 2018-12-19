@@ -18,6 +18,7 @@ export class RestoPage {
   id: any
   resto: any
   categories: any
+  user: any
 
   constructor(
     public navCtrl: NavController,
@@ -26,10 +27,19 @@ export class RestoPage {
   ) {
     this.resto = navParams.get('resto')
     this.getCategories()
+    this.getUser()
   }
   getCategories() {
     this.restProvider.getCategories().then(data => {
       this.categories = data
+    })
+  }
+  addCart(idProduit) {
+    this.restProvider.addCart(idProduit)
+  }
+  getUser() {
+    this.restProvider.getUser().then(data => {
+      this.user = data
     })
   }
 }

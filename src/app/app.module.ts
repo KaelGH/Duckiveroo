@@ -13,6 +13,7 @@ import { MyApp } from './app.component'
 import { HomePage } from '../pages/home/home'
 import { RestProvider } from '../providers/rest/rest'
 import { RestoPage } from '../pages/resto/resto'
+import { AppProposPage } from '../pages/app-propos/app-propos'
 import { LoginPage } from '../pages/login/login'
 import { RegisterPage } from '../pages/register/register'
 
@@ -24,8 +25,9 @@ import { RegisterPage } from '../pages/register/register'
     RecherchePage,
     ComptePage,
     RestoPage,
+    AppProposPage,
     LoginPage,
-    RegisterPage,
+    RegisterPage
   ],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
@@ -36,8 +38,9 @@ import { RegisterPage } from '../pages/register/register'
     RecherchePage,
     ComptePage,
     RestoPage,
+    AppProposPage,
     LoginPage,
-    RegisterPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
