@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Compte</ion-title>
-    <span>email@email.email</span>
+    <span *ngIf="user != null">{{ user.email }}</span>
   </ion-navbar>
 </ion-header>
 

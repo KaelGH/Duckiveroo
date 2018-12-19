@@ -1,7 +1,10 @@
-import { Component } from '@angular/core'
-import { IonicPage, NavController, NavParams } from 'ionic-angular'
-import { RestProvider } from '../../providers/rest/rest'
-import { RegisterPage } from '../register/register'
+import {Component} from '@angular/core'
+import {IonicPage, NavController, NavParams} from 'ionic-angular'
+import {RestProvider} from '../../providers/rest/rest'
+import {RegisterPage} from '../register/register'
+import { ComptePage } from "../compte/compte";
+
+import {TokenProvider} from "../../providers/token/token";
 
 /**
  * Generated class for the LoginPage page.
@@ -12,31 +15,31 @@ import { RegisterPage } from '../register/register'
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html'
+    selector: 'page-login',
+    templateUrl: 'login.html'
 })
 export class LoginPage {
-  email: ''
-  password: ''
-  user: {}
+    email: ''
+    password: ''
+    user: {}
 
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    public restProvider: RestProvider
-  ) {}
+    constructor(
+        public navCtrl: NavController,
+        public navParams: NavParams,
+        public restProvider: RestProvider,
+        public tokenProvider: TokenProvider
+    ) {
+    }
 
-  /*ionViewDidLoad() {
-        console.log('ionViewDidLoad LoginPage');
-    }*/
+    login() {
+        this.restProvider.postLogin(this.email, this.password).then(data => {
+            console.log(data)
+            this.tokenProvider.token = data
+            this.navCtrl.push(ComptePage)
+        })
+    }
 
-  login() {
-    this.restProvider.postLogin(this.email, this.password).then(data => {
-      this.user = data
-    })
-  }
-
-  goToRegisterPage() {
-    this.navCtrl.push(RegisterPage)
-  }
+    goToRegisterPage() {
+        this.navCtrl.push(RegisterPage)
+    }
 }
