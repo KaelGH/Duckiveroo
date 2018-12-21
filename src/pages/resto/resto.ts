@@ -1,5 +1,11 @@
+import { CartPage } from './../cart/cart'
 import { Component } from '@angular/core'
-import { IonicPage, NavController, NavParams } from 'ionic-angular'
+import {
+  IonicPage,
+  NavController,
+  NavParams,
+  UrlSerializer
+} from 'ionic-angular'
 import { RestProvider } from '../../providers/rest/rest'
 
 /**
@@ -19,6 +25,7 @@ export class RestoPage {
   resto: any
   categories: any
   user: any
+  totalProduit: number
 
   constructor(
     public navCtrl: NavController,
@@ -35,11 +42,28 @@ export class RestoPage {
     })
   }
   addCart(idProduit) {
-    this.restProvider.addCart(idProduit)
+    this.restProvider.addCart(idProduit).then(data => {
+      this.calcNbProduits()
+    })
   }
   getUser() {
     this.restProvider.getUser().then(data => {
       this.user = data
+      this.calcNbProduits
     })
+  }
+  calcNbProduits() {
+    for (const produit of this.user.cart.cartProduit) {
+      this.totalProduit += produit.count
+    }
+    console.log(this.totalProduit)
+  }
+
+  plusUn() {
+    this.totalProduit = +1
+  }
+
+  goToCart() {
+    this.navCtrl.push(CartPage)
   }
 }

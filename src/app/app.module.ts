@@ -1,10 +1,11 @@
+import { CartPage } from './../pages/cart/cart'
 import { BrowserModule } from '@angular/platform-browser'
 import { ErrorHandler, NgModule } from '@angular/core'
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular'
 import { SplashScreen } from '@ionic-native/splash-screen'
 import { StatusBar } from '@ionic-native/status-bar'
 import { HttpClientModule } from '@angular/common/http'
-import { TokenProvider } from "../providers/token/token";
+import { TokenProvider } from '../providers/token/token'
 
 //PAGES
 import { ComptePage } from '../pages/compte/compte'
@@ -28,7 +29,8 @@ import { RegisterPage } from '../pages/register/register'
     RestoPage,
     AppProposPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    CartPage
   ],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
@@ -41,7 +43,8 @@ import { RegisterPage } from '../pages/register/register'
     RestoPage,
     AppProposPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    CartPage
   ],
   providers: [
     StatusBar,

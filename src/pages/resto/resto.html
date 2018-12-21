@@ -3,7 +3,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="card-image"><img src="{{resto.image}}" /></div>
+  <div class="card-image"><img src="{{ resto.image }}" /></div>
   <div class="resto-content">
     <p class="resto-name">{{ resto.name }}</p>
     <div class="resto-infos">
@@ -31,7 +31,7 @@
     <div class="categorie" *ngFor="let categorie of resto.categories">
       <h3>{{ categorie.name }}</h3>
       <div
-        (click)="addCart(produit.id)"
+        (click)="addCart(produit.id); plusUn()"
         class="produits"
         *ngFor="let produit of categorie.produits"
       >
@@ -42,5 +42,14 @@
         <p class="produit-description">{{ produit.description }}</p>
       </div>
     </div>
+  </div>
+  <div class="show-articles">
+    <ul>
+      <li>
+        <span>{{ totalProduit }} article</span>
+      </li>
+      <li><span class="prix-total">6,40€</span></li>
+    </ul>
+    <button ion-button (click)="goToCart()">Voir la commande</button>
   </div>
 </ion-content>
