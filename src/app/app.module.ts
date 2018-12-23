@@ -1,4 +1,3 @@
-import { CartPage } from './../pages/cart/cart'
 import { BrowserModule } from '@angular/platform-browser'
 import { ErrorHandler, NgModule } from '@angular/core'
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular'
@@ -18,6 +17,7 @@ import { RestoPage } from '../pages/resto/resto'
 import { AppProposPage } from '../pages/app-propos/app-propos'
 import { LoginPage } from '../pages/login/login'
 import { RegisterPage } from '../pages/register/register'
+import { CartPage } from '../pages/cart/cart'
 
 @NgModule({
   declarations: [

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core'
-import { IonicPage, NavController, NavParams } from 'ionic-angular'
-import { RestProvider } from '../../providers/rest/rest'
+import {Component} from '@angular/core'
+import {IonicPage, NavController, NavParams} from 'ionic-angular'
+import {RestProvider} from '../../providers/rest/rest'
 
 /**
  * Generated class for the CartPage page.
@@ -11,29 +11,26 @@ import { RestProvider } from '../../providers/rest/rest'
 
 @IonicPage()
 @Component({
-  selector: 'page-cart',
-  templateUrl: 'cart.html'
+    selector: 'page-cart',
+    templateUrl: 'cart.html'
 })
 export class CartPage {
-  cart: any
-  user: any
+    user: any
+    cart: any
+    constructor(
+        public navCtrl: NavController,
+        public navParams: NavParams,
+        public restProvider: RestProvider
+    ) {
+        this.getCart()
+    }
 
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    public restProvider: RestProvider
-  ) {
-    this.getCart()
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CartPage')
-  }
-
-  getCart() {
-    this.restProvider.getUser().then(data => {
-      this.user = data
-      this.cart = this.user.cart
-    })
-  }
+    getCart() {
+        this.restProvider.getUser().then(data => {
+            console.log(data)
+            this.user = data
+            this.cart = this.user.cart.cartProduit
+            console.log(this.cart)
+        })
+    }
 }

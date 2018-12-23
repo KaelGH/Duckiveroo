@@ -27,12 +27,7 @@ export class RegisterPage {
         public navCtrl: NavController,
         public navParams: NavParams,
         public restProvider: RestProvider
-    ) {
-    }
-
-    /*ionViewDidLoad() {
-      console.log('ionViewDidLoad RegisterPage');
-    }*/
+    ) {}
 
     register() {
         if (this.password != this.password2) {

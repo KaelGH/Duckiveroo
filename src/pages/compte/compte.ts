@@ -1,7 +1,7 @@
 import {Component} from '@angular/core'
 import {IonicPage, NavController, NavParams} from 'ionic-angular'
 import {LoginPage} from '../login/login'
-import {AppProposPage} from './../app-propos/app-propos'
+import {AppProposPage} from '../app-propos/app-propos'
 
 import {RestProvider} from "../../providers/rest/rest";
 import {TokenProvider} from "../../providers/token/token";
