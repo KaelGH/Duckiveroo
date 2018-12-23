@@ -47,7 +47,7 @@ page-cart {
   }
 
   .list-produits {
-    margin-bottom: 70px;
+    margin-bottom: 140px;
   }
   .list {
     margin: 0;
@@ -70,10 +70,20 @@ page-cart {
     display: block;
     width: 100%;
     padding: 16px;
+    padding-top: 0;
     box-sizing: border-box;
     box-shadow: 0 0 2px rgba($color: black, $alpha: 0.2);
+
+    p {
+      font-size: 1.2em;
+      span {
+        float: right;
+      }
+    }
+    .total {
+      font-weight: bold;
+    }
     button {
-      float: right;
       background: #2fb5b3;
     }
   }

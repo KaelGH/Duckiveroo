@@ -23,15 +23,13 @@ export class RestProvider {
   apiUrl = 'http://duckapi.thibaudcordina.fr'
   // apiUrl = 'http://localhost:8000'
   constructor(public http: HttpClient, public tokenProvider: TokenProvider) {}
-  token = 'testkey'
 
   getRestos() {
     return new Promise(resolve => {
       this.http
         .get(this.apiUrl + '/restaurants', {
           params: {
-            token: 'testkey'
-            //token: this.tokenProvider.token
+            token: this.tokenProvider.token
           }
         })
         .subscribe(
@@ -51,8 +49,7 @@ export class RestProvider {
       this.http
         .get(this.apiUrl + '/restaurants/' + id, {
           params: {
-            token: 'testkey'
-            //token: this.tokenProvider.token
+            token: this.tokenProvider.token
           }
         })
         .subscribe(
@@ -72,8 +69,7 @@ export class RestProvider {
       this.http
         .get(this.apiUrl + '/categories', {
           params: {
-            token: 'testkey'
-            //token: this.tokenProvider.token
+            token: this.tokenProvider.token
           }
         })
         .subscribe(
@@ -133,8 +129,7 @@ export class RestProvider {
       this.http
         .get(this.apiUrl + '/cart/add/' + idProduit, {
           params: {
-            token: 'testkey'
-            //token: this.tokenProvider.token
+            token: this.tokenProvider.token
           }
         })
         .subscribe(
@@ -154,8 +149,7 @@ export class RestProvider {
       this.http
         .get(this.apiUrl + '/user', {
           params: {
-            token: 'testkey'
-            //token: this.tokenProvider.token
+            token: this.tokenProvider.token
           }
         })
         .subscribe(

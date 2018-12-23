@@ -31,7 +31,7 @@ export class RestoPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public restProvider: RestProvider
+    public restProvider: RestProvider,
     public toastCtrl: ToastController
   ) {
     this.resto = navParams.get('resto')
@@ -61,15 +61,15 @@ export class RestoPage {
     console.log(this.totalProduit)
   }
 
-  goToCart() {
-    this.navCtrl.push(CartPage)
+  goToCart(resto) {
+    this.navCtrl.push(CartPage, { resto: resto })
   }
 
   toast() {
     const toast = this.toastCtrl.create({
       message: 'Article ajouté au panier',
       duration: 1000
-    });
-    toast.present();
+    })
+    toast.present()
   }
 }
