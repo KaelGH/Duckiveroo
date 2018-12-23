@@ -7,6 +7,7 @@ import {
   UrlSerializer
 } from 'ionic-angular'
 import { RestProvider } from '../../providers/rest/rest'
+import { ToastController } from 'ionic-angular'
 
 /**
  * Generated class for the RestoPage page.
@@ -31,6 +32,7 @@ export class RestoPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public restProvider: RestProvider
+    public toastCtrl: ToastController
   ) {
     this.resto = navParams.get('resto')
     this.getCategories()
@@ -59,8 +61,15 @@ export class RestoPage {
     console.log(this.totalProduit)
   }
 
-
   goToCart() {
     this.navCtrl.push(CartPage)
+  }
+
+  toast() {
+    const toast = this.toastCtrl.create({
+      message: 'Article ajouté au panier',
+      duration: 1000
+    });
+    toast.present();
   }
 }

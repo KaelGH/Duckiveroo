@@ -31,7 +31,7 @@
     <div class="categorie" *ngFor="let categorie of resto.categories">
       <h3>{{ categorie.name }}</h3>
       <div
-        (click)="addCart(produit.id)"
+        (click)="addCart(produit.id); toast()"
         class="produits"
         *ngFor="let produit of categorie.produits"
       >

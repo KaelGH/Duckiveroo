@@ -5,11 +5,34 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar> <ion-title>Ma commande</ion-title> </ion-navbar>
+  <ion-navbar> <ion-title>Mon panier</ion-title> </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list *ngFor="let produit of cart">
-    <ion-item>{{ produit.produit.name }}</ion-item>
-  </ion-list>
+<ion-content>
+  <ion-card class="time">
+    <ion-card-header> Commande pour </ion-card-header>
+    <ion-card-content> 15 - 25 (Au plus tôt) </ion-card-content>
+  </ion-card>
+
+  <div class="couverts">
+    <p class="title">Couverts</p>
+    <p class="text">
+      Contribuez à réduire les déchets : demandez des couverts que si vous en
+      avez besoin.
+    </p>
+    <ion-toggle primary checked="false"></ion-toggle>
+  </div>
+
+  <div class="list-produits">
+    <ion-list *ngFor="let produit of cart">
+      <ion-item
+        ><span class="nb-of-product">{{ produit.count }} x</span
+        >{{ produit.produit.name }}</ion-item
+      >
+    </ion-list>
+  </div>
+
+  <div class="show-articles">
+    <button ion-button block>Finaliser la commande</button>
+  </div>
 </ion-content>
