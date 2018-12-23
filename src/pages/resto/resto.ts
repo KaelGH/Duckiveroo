@@ -55,10 +55,12 @@ export class RestoPage {
     })
   }
   calcNbProduits() {
-    for (const produit of this.user.cart.cartProduit) {
-      this.totalProduit += produit.count
-    }
-    console.log(this.totalProduit)
+      if (this.user.cart !== null) {
+          for (const produit of this.user.cart.cartProduit) {
+              this.totalProduit += produit.count
+          }
+          console.log(this.totalProduit)
+      }
   }
 
   goToCart(resto) {

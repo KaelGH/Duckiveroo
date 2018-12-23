@@ -24,6 +24,7 @@
   </div>
 
   <div class="list-produits">
+    <span *ngIf="cart == null">Le panier est vide.</span>
     <ion-list *ngFor="let produit of cart">
       <ion-item>
         <span class="nb-of-product">{{ produit.count }} x</span>
@@ -38,6 +39,17 @@
           (click)="removeFromCart(produit.produit.id)"
         >
           <ion-icon ios="md-remove" md="md-remove"></ion-icon>
+        </button>
+        <button
+                ion-button
+                round
+                small
+                icon-only
+                color="light"
+                class="remove-kebab"
+                (click)="addCart(produit.produit.id)"
+        >
+          <ion-icon ios="md-add" md="md-add"></ion-icon>
         </button>
       </ion-item>
     </ion-list>

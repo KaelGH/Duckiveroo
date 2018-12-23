@@ -47,7 +47,8 @@ export class ComptePage {
         this.navCtrl.push(LoginPage)
     }
 
-    goToProposPage() {
-        this.navCtrl.push(AppProposPage)
+    logout() {
+        this.tokenProvider.token = null
+        this.navCtrl.push(LoginPage)
     }
 }

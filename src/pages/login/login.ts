@@ -33,9 +33,11 @@ export class LoginPage {
 
     login() {
         this.restProvider.postLogin(this.email, this.password).then(data => {
-            console.log(data)
-            this.tokenProvider.token = data
-            this.navCtrl.push(HomePage)
+            if (data != 'wrong credentials') {
+                console.log(data)
+                this.tokenProvider.token = data
+                this.navCtrl.push(HomePage)
+            }
         })
     }
 

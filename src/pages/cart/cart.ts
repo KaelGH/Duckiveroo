@@ -34,8 +34,16 @@ export class CartPage {
     getCart() {
         this.restProvider.getUser().then(data => {
             this.user = data
-            this.cart = this.user.cart.cartProduit
-            this.getCartInfos()
+            if (this.user.cart != null) {
+                this.cart = this.user.cart.cartProduit
+                this.getCartInfos()
+            }
+        })
+    }
+
+    addCart(idProduit) {
+        this.restProvider.addCart(idProduit).then(data => {
+            this.getCart()
         })
     }
 
@@ -48,11 +56,13 @@ export class CartPage {
     getCartInfos() {
         this.totalPrice = 0
         this.totalAmount = 0
-        for (let produit of this.cart) {
-            console.log(produit)
-            this.totalAmount += produit.count
-            this.totalPrice += produit.count * produit.produit.price
-            console.log(this.totalPrice, this.totalAmount)
+        if (this.cart != null) {
+            for (let produit of this.cart) {
+                console.log(produit)
+                this.totalAmount += produit.count
+                this.totalPrice += produit.count * produit.produit.price
+                console.log(this.totalPrice, this.totalAmount)
+            }
         }
     }
 }
