@@ -22,7 +22,9 @@ export class CartPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public restProvider: RestProvider
-  ) {}
+  ) {
+    this.getCart()
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage')

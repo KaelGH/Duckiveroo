@@ -59,9 +59,6 @@ export class RestoPage {
     console.log(this.totalProduit)
   }
 
-  plusUn() {
-    this.totalProduit = +1
-  }
 
   goToCart() {
     this.navCtrl.push(CartPage)

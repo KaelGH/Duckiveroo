@@ -31,7 +31,7 @@
     <div class="categorie" *ngFor="let categorie of resto.categories">
       <h3>{{ categorie.name }}</h3>
       <div
-        (click)="addCart(produit.id); plusUn()"
+        (click)="addCart(produit.id)"
         class="produits"
         *ngFor="let produit of categorie.produits"
       >
@@ -44,12 +44,6 @@
     </div>
   </div>
   <div class="show-articles">
-    <ul>
-      <li>
-        <span>{{ totalProduit }} article</span>
-      </li>
-      <li><span class="prix-total">6,40€</span></li>
-    </ul>
     <button ion-button (click)="goToCart()">Voir la commande</button>
   </div>
 </ion-content>
