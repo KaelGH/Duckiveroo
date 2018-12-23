@@ -39,6 +39,9 @@ export class RegisterPage {
         formData['nom'] = this.nom
         formData['prenom'] = this.prenom
         this.restProvider.postRegister(formData).then(data => {
+            if (data == true) {
+                this.navCtrl.push(LoginPage)
+            }
         })
     }
 

@@ -2,7 +2,7 @@ import {Component} from '@angular/core'
 import {IonicPage, NavController, NavParams} from 'ionic-angular'
 import {RestProvider} from '../../providers/rest/rest'
 import {RegisterPage} from '../register/register'
-import { ComptePage } from "../compte/compte";
+import {HomePage} from "../home/home";
 
 import {TokenProvider} from "../../providers/token/token";
 
@@ -35,7 +35,7 @@ export class LoginPage {
         this.restProvider.postLogin(this.email, this.password).then(data => {
             console.log(data)
             this.tokenProvider.token = data
-            this.navCtrl.push(ComptePage)
+            this.navCtrl.push(HomePage)
         })
     }
 

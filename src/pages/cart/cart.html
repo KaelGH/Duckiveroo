@@ -49,7 +49,7 @@
       <span>{{ resto.prixLivraison | currency: 'EUR' }}</span>
     </p>
     <p class="total">
-      Total <span>{{ totalPrice | currency: 'EUR' }}</span>
+      Total <span>{{totalPrice+resto.prixLivraison|currency:'EUR' }}</span>
     </p>
     <button ion-button block>Finaliser la commande</button>
   </div>
