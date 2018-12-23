@@ -51,7 +51,7 @@ export class RestoPage {
   getUser() {
     this.restProvider.getUser().then(data => {
       this.user = data
-      this.calcNbProduits
+      this.calcNbProduits()
     })
   }
   calcNbProduits() {
