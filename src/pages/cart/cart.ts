@@ -17,6 +17,8 @@ import {RestProvider} from '../../providers/rest/rest'
 export class CartPage {
     user: any
     cart: any
+    totalPrice = 0
+    totalAmount = 0
     constructor(
         public navCtrl: NavController,
         public navParams: NavParams,
@@ -27,10 +29,18 @@ export class CartPage {
 
     getCart() {
         this.restProvider.getUser().then(data => {
-            console.log(data)
             this.user = data
             this.cart = this.user.cart.cartProduit
-            console.log(this.cart)
+            this.getCartInfos()
         })
+    }
+
+    getCartInfos() {
+        for (let produit of this.cart) {
+            console.log(produit)
+            this.totalAmount += produit.count
+            this.totalPrice += produit.count * produit.produit.price
+            console.log(this.totalPrice, this.totalAmount)
+        }
     }
 }
