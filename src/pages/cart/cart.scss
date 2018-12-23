@@ -51,6 +51,10 @@ page-cart {
   }
   .list {
     margin: 0;
+    .remove-kebab {
+      float: right;
+      box-shadow: none;
+    }
   }
   .nb-of-product {
     position: absolute;

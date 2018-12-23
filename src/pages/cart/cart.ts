@@ -27,6 +27,7 @@ export class CartPage {
   ) {
     this.resto = navParams.get('resto')
     this.getCart()
+    this.removeFromCart('')
   }
 
   getCart() {
@@ -37,6 +38,9 @@ export class CartPage {
     })
   }
 
+  removeFromCart(idProduit) {
+    this.restProvider.removeFromCart(idProduit).then(data => {})
+  }
   getCartInfos() {
     for (let produit of this.cart) {
       console.log(produit)

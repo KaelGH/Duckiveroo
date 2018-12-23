@@ -28,6 +28,17 @@
       <ion-item>
         <span class="nb-of-product">{{ produit.count }} x</span>
         {{ produit.produit.name }}
+        <button
+          ion-button
+          round
+          small
+          icon-only
+          color="light"
+          class="remove-kebab"
+          (click)="removeFromCart(produit.id)"
+        >
+          <ion-icon ios="md-remove" md="md-remove"></ion-icon>
+        </button>
       </ion-item>
     </ion-list>
   </div>

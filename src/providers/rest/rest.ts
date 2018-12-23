@@ -144,6 +144,26 @@ export class RestProvider {
     })
   }
 
+  removeFromCart(idProduit) {
+    return new Promise(resolve => {
+      this.http
+        .get(this.apiUrl + '/cart/remove/' + idProduit, {
+          params: {
+            token: this.tokenProvider.token
+          }
+        })
+        .subscribe(
+          data => {
+            resolve(data)
+            return data
+          },
+          err => {
+            console.log(err)
+          }
+        )
+    })
+  }
+
   getUser() {
     return new Promise(resolve => {
       this.http
